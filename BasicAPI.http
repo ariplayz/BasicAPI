@@ -1,0 +1,38 @@
+@BasicAPI_HostAddress = http://localhost:8080
+@id = 27
+
+### Fetch All Entities
+GET {{BasicAPI_HostAddress}}/GetEntities
+Accept: application/json
+
+### Create a New Entity
+POST {{BasicAPI_HostAddress}}/NewEntity
+Content-Type: application/json
+
+{
+  "name": "Fred"
+}
+
+### Fetch a Specific Entity by ID
+GET {{BasicAPI_HostAddress}}/GetEntity/{{id}}
+Accept: application/json
+
+### Update an Existing Entity
+PUT {{BasicAPI_HostAddress}}/EditEntity/{{id}}
+Content-Type: application/json
+
+{
+  "name": "George"
+}
+
+### Fetch the Same Updated Entity by ID
+GET {{BasicAPI_HostAddress}}/GetEntity/{{id}}
+Accept: application/json
+
+### Delete an Entity by ID
+DELETE {{BasicAPI_HostAddress}}/DeleteEntity/{{id}}
+Accept: application/json
+
+### Fetch All Entities Again
+GET {{BasicAPI_HostAddress}}/GetEntities
+Accept: application/json
