@@ -1,0 +1,5 @@
+﻿@BasicAPI_HostAddress = http://localhost:8080
+
+### Hello World
+GET {{BasicAPI_HostAddress}}/helloworld?thingy=poop
+Accept: application/json

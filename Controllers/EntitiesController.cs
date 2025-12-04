@@ -2,10 +2,11 @@ using BasicApi.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BasicAPI.Models;
+using Microsoft.AspNetCore.Http.HttpResults;
 
 namespace BasicAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/")]
     [ApiController]
     public class YourEntitiesController : ControllerBase
     {
@@ -16,7 +17,7 @@ namespace BasicAPI.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("shit")]
         public async Task<ActionResult<IEnumerable<Entity>>> GetEntities()
         {
             return await _context.Entities.ToListAsync();
@@ -36,6 +37,12 @@ namespace BasicAPI.Controllers
             _context.Entities.Add(entity);
             await _context.SaveChangesAsync();
             return CreatedAtAction(nameof(GetEntity), new { id = entity.Id }, entity);
+        }
+        
+        [HttpGet("helloworld")]
+        public Microsoft.AspNetCore.Mvc.OkObjectResult GetHelloWorld([FromQuery] string thingy)
+        {
+            return Ok("Hello World, " + thingy);
         }
         
     }
