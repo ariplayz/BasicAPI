@@ -1354,7 +1354,7 @@ basicapi|schema||basicapi|localhost|UPDATE|G</Grants>
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Current>1</Current>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-12-04.23:13:52</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-12-05.01:20:42</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
     <schema id="555" parent="1" name="information_schema">
@@ -1366,28 +1366,52 @@ basicapi|schema||basicapi|localhost|UPDATE|G</Grants>
     <user id="557" parent="1" name="basicapi">
       <Host>localhost</Host>
     </user>
-    <table id="558" parent="554" name="entities">
+    <table id="558" parent="554" name="__efmigrationshistory">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_unicode_ci</CollationName>
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </table>
-    <column id="559" parent="558" name="Id">
+    <table id="559" parent="554" name="entities">
+      <DetailsLevel>3</DetailsLevel>
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
+    </table>
+    <column id="560" parent="558" name="MigrationId">
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+      <StoredType>varchar(150)|0s</StoredType>
+    </column>
+    <column id="561" parent="558" name="ProductVersion">
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+      <StoredType>varchar(32)|0s</StoredType>
+    </column>
+    <index id="562" parent="558" name="PRIMARY">
+      <ColNames>MigrationId</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="563" parent="558" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="564" parent="559" name="Id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="560" parent="558" name="Name">
-      <NotNull>1</NotNull>
+    <column id="565" parent="559" name="Name">
       <Position>2</Position>
-      <StoredType>varchar(200)|0s</StoredType>
+      <StoredType>longtext|0s</StoredType>
     </column>
-    <index id="561" parent="558" name="PRIMARY">
+    <index id="566" parent="559" name="PRIMARY">
       <ColNames>Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="562" parent="558" name="PRIMARY">
+    <key id="567" parent="559" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
