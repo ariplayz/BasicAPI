@@ -3,7 +3,7 @@
   <database-model serializer="dbm" dbms="MARIADB" family-id="MARIADB" format-version="4.54">
     <root id="1">
       <DefaultAuthPlugin>mysql_native_password</DefaultAuthPlugin>
-      <DefaultCasing>exact</DefaultCasing>
+      <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <Grants>basicapi|schema||basicapi|localhost|ALTER|G
 basicapi|schema||basicapi|localhost|ALTER ROUTINE|G
@@ -25,7 +25,7 @@ basicapi|schema||basicapi|localhost|SHOW CREATE ROUTINE|G
 basicapi|schema||basicapi|localhost|SHOW VIEW|G
 basicapi|schema||basicapi|localhost|TRIGGER|G
 basicapi|schema||basicapi|localhost|UPDATE|G</Grants>
-      <ServerVersion>11.8.3</ServerVersion>
+      <ServerVersion>12.1.2</ServerVersion>
     </root>
     <collation id="2" parent="1" name="armscii8_bin">
       <Charset>armscii8</Charset>
@@ -1354,37 +1354,40 @@ basicapi|schema||basicapi|localhost|UPDATE|G</Grants>
       <AutoIntrospectionLevel>3</AutoIntrospectionLevel>
       <Current>1</Current>
       <LastIntrospectionLevel>3</LastIntrospectionLevel>
-      <LastIntrospectionLocalTimestamp>2025-12-03.21:17:04</LastIntrospectionLocalTimestamp>
+      <LastIntrospectionLocalTimestamp>2025-12-04.23:13:52</LastIntrospectionLocalTimestamp>
       <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
     </schema>
     <schema id="555" parent="1" name="information_schema">
       <CollationName>utf8mb3_general_ci</CollationName>
     </schema>
-    <user id="556" parent="1" name="basicapi">
+    <schema id="556" parent="1" name="test">
+      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
+    </schema>
+    <user id="557" parent="1" name="basicapi">
       <Host>localhost</Host>
     </user>
-    <table id="557" parent="554" name="Entities">
+    <table id="558" parent="554" name="entities">
       <DetailsLevel>3</DetailsLevel>
       <Engine>InnoDB</Engine>
-      <CollationName>utf8mb4_uca1400_ai_ci</CollationName>
+      <CollationName>utf8mb4_unicode_ci</CollationName>
     </table>
-    <column id="558" parent="557" name="Id">
+    <column id="559" parent="558" name="Id">
       <AutoIncrement>1</AutoIncrement>
       <NotNull>1</NotNull>
       <Position>1</Position>
       <StoredType>int(11)|0s</StoredType>
     </column>
-    <column id="559" parent="557" name="Name">
+    <column id="560" parent="558" name="Name">
       <NotNull>1</NotNull>
       <Position>2</Position>
-      <StoredType>varchar(255)|0s</StoredType>
+      <StoredType>varchar(200)|0s</StoredType>
     </column>
-    <index id="560" parent="557" name="PRIMARY">
+    <index id="561" parent="558" name="PRIMARY">
       <ColNames>Id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="561" parent="557" name="PRIMARY">
+    <key id="562" parent="558" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
